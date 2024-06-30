@@ -3,8 +3,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				4,
-				-260
+				-27,
+				-281
 			],
 			"anim": "idle",
 			"fps": 24,
@@ -14,8 +14,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				52,
-				-273
+				-27,
+				-298
 			],
 			"anim": "singLEFT",
 			"fps": 24,
@@ -25,8 +25,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				-2,
-				-284
+				-23,
+				-283
 			],
 			"anim": "singDOWN",
 			"fps": 24,
@@ -36,8 +36,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				34,
-				-213
+				-33,
+				-233
 			],
 			"anim": "singUP",
 			"fps": 24,
@@ -47,8 +47,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				-14,
-				-280
+				-30,
+				-276
 			],
 			"anim": "singRIGHT",
 			"fps": 24,
@@ -124,7 +124,7 @@
 		{
 			"offsets": [
 				-29,
-				-186
+				-187
 			],
 			"indices": [],
 			"fps": 24,
@@ -135,7 +135,7 @@
 	],
 	"vocals_file": "",
 	"no_antialiasing": false,
-	"image": "characters/charlie",
+	"image": "characters/charlieHiding",
 	"position": [
 		0,
 		0
