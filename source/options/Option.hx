@@ -268,7 +268,7 @@ class ResultsScreen extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Results Screen: " + (ClientPrefs.data.resultsScreen ? enable_O : disable_O);
+		return "Results Screen: " + (ClientPrefs.data.resultsScreen ? disable_O);
 	}
 }
 
