@@ -1208,7 +1208,7 @@ class CustomFadeType extends Option
 	{
 	    if (ClientPrefs.data.CustomFade == 'Move')
 		    ClientPrefs.data.CustomFade = 'Alpha';
-		else ClientPrefs.data.CustomFade = 'Move';
+		else ClientPrefs.data.CustomFade = 'Alpha';
 		display = updateDisplay();
     }
 
@@ -1238,7 +1238,7 @@ class CustomFadeSound extends Option
 	{
 		ClientPrefs.data.CustomFadeSound += 0.1;
 		if (ClientPrefs.data.CustomFadeSound > 1)
-			ClientPrefs.data.CustomFadeSound = 1;
+			ClientPrefs.data.CustomFadeSound = 0.1;
 		ClientPrefs.data.CustomFadeSound = FlxMath.roundDecimal(ClientPrefs.data.CustomFadeSound, 1);
 		display = updateDisplay();
     }
@@ -1276,7 +1276,7 @@ class CustomFadeText extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Custom Fade Text: " + (ClientPrefs.data.CustomFadeText ? enable_O : disable_O);
+		return "Custom Fade Text: " + (ClientPrefs.data.CustomFadeText ? disable_O);
 	}
 }
 
