@@ -268,7 +268,7 @@ class ResultsScreen extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Results Screen: " + (ClientPrefs.data.resultsScreen ? enable_0 : disable_O);
+		return "Results Screen: " + (ClientPrefs.data.resultsScreen ? enable_O : disable_O);
 	}
 }
 
@@ -1276,7 +1276,7 @@ class CustomFadeText extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Custom Fade Text: " + (ClientPrefs.data.CustomFadeText ? enable_0 : disable_O);
+		return "Custom Fade Text: " + (ClientPrefs.data.CustomFadeText ? enable_O : disable_O);
 	}
 }
 
