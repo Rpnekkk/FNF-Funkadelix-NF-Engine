@@ -302,7 +302,9 @@ class Judgement extends Option
 	}
 
 	override function press()
-	{						
+	{
+		
+							
 		var num:Int = 8;	
 		OptionsState.instance.selectedCatIndex = num;
 		OptionsState.instance.switchCat(OptionsState.instance.options[num], false);
@@ -500,6 +502,8 @@ class HitSound extends Option
 		ClientPrefs.data.hitsoundVolume = FlxMath.roundDecimal(ClientPrefs.data.hitsoundVolume, 1);
         if (ClientPrefs.data.hitsoundType == ClientPrefs.defaultData.hitsoundType) FlxG.sound.play(Paths.sound('hitsound'), ClientPrefs.data.hitsoundVolume);
 		else FlxG.sound.play(Paths.sound('hitsounds/' + ClientPrefs.data.hitsoundType), ClientPrefs.data.hitsoundVolume);
+		
+
 	}
 
 	override function left()
@@ -508,8 +512,7 @@ class HitSound extends Option
 		if (ClientPrefs.data.hitsoundVolume < 0)
 			ClientPrefs.data.hitsoundVolume = 0;
 		ClientPrefs.data.hitsoundVolume = FlxMath.roundDecimal(ClientPrefs.data.hitsoundVolume, 1);
-        if (ClientPrefs.data.hitsoundType == ClientPrefs.defaultData.hitsoundType) FlxG.sound.play(Paths.sound('hitsound'), ClientPrefs.data.hitsoundVolume);
-		else FlxG.sound.play(Paths.sound('hitsounds/' + ClientPrefs.data.hitsoundType), ClientPrefs.data.hitsoundVolume);
+        FlxG.sound.play(Paths.sound('hitsound'), ClientPrefs.data.hitsoundVolume);
     }
     
     private override function updateDisplay():String
@@ -556,29 +559,6 @@ class ScoreZoom extends Option
 	private override function updateDisplay():String
 	{
 		return "Score Beat: " + (ClientPrefs.data.scoreZoom ? enable_O : disable_O);
-	}
-}
-
-class KeyboardDisplayOption  extends Option
-{
-	public function new(desc:String)
-	{
-		super();
-		description = desc;
-		acceptValues = true;
-	}
-
-	override function press()
-	{						
-		var num:Int = 9;	
-		OptionsState.instance.selectedCatIndex = num;
-		OptionsState.instance.switchCat(OptionsState.instance.options[num], false);
-		
-    }
-
-	private override function updateDisplay():String
-	{
-		return "Keyboard Display";
 	}
 }
 
@@ -942,4 +922,37 @@ class PauseMusic extends Option
 	public function new(desc:String)
 	{
 		super();
-		d
+		description = desc;
+		OptionsHelpers.setPauseMusicType();
+	}
+
+	override function left()
+	{
+	    chooseNum--;
+	    OptionsHelpers.changePauseMusicType();
+    }
+
+	override function right()
+	{
+	    chooseNum++;
+	    OptionsHelpers.changePauseMusicType();
+    }
+
+	private override function updateDisplay():String
+	{
+		return "Pause Music: < " + ClientPrefs.data.pauseMusic + " >";
+	}
+}
+
+class PauseButton extends Option
+{
+    public static var chooseNum:Int;
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	override function press()
+	{
+		ClientPrefs.data.pauseButton = !ClientPrefs.d
